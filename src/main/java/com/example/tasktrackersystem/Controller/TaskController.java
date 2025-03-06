@@ -38,9 +38,9 @@ public class TaskController {
     }
 
     //CHANGE
-    @PutMapping("change/{index}")
+    @PutMapping("change/{index}/{status}")
     public ApiResponse changeStatus(@PathVariable int index, String status) {
-        tasks.get(1).setStatus("not done");
+        tasks.get(index).setStatus(status);
         return new ApiResponse("Task status changed successfully");
     }
 
